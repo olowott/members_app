@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\CountryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/', [CountryController::class, 'index']);
+
+//Show register/create user form
+Route::get('/register', [UserController::class, 'create']);
+
+//Create a new user
+Route::post('/users', [UserController::class, 'store']);
