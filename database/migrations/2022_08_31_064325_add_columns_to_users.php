@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreignId('marital_status_id')->nullable();
             $table->foreignId('hduhau_id')->nullable();
             //other fields
-            $table->dropColumn('last_name')->nullable();
+            $table->string('last_name')->nullable();
             $table->string('address')->nullable();
             $table->string('phone')->nullable()->unique();
             $table->date('DOB')->nullable();
