@@ -45,6 +45,7 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -55,6 +56,19 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'country_id' => $request->country_id,
+            'group_id' => $request->group_id,
+            'marital_status_id' => $request->marital_status_id,
+            'hduhau_id' => $request->hduhau_id,
+            'last_name' => $request->last_name,
+            'phone' => $request->phone,
+            'DOB' => $request->DOB,
+            'occupation' => $request->occupation,
+            'address' => $request->address,
+            'state' => $request->state,
+            'church' => $request->church,
+            'pastor_name' => $request->pastor_name,
+            'membership_year' => $request->membership_year,
         ]);
 
         event(new Registered($user));

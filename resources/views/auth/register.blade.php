@@ -40,9 +40,9 @@
         
                     <!-- DOB -->
                     <div class="mt-4">
-                        <x-label for="dob" :value="__('Date of Birth')"  />
+                        <x-label for="DOB" :value="__('Date of Birth')"  />
         
-                        <x-input id="dob" class="block mt-1 w-full" type="date" name="dob" :value="old('dob')" required autofocus />
+                        <x-input id="DOB" class="block mt-1 w-full" type="date" name="DOB" :value="old('DOB')" required autofocus />
                     </div>
                     <!-- Occupation -->
                     <div class="mt-4">
@@ -56,7 +56,7 @@
                         <x-label for="marital_status" :value="__('Marital Status')" />
         
                        
-                        <select class="form-select rounded-md  mt-1 shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full ">
+                        <select class="form-select rounded-md  mt-1 shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full " name="marital_status_id" id="marital_status_id" :value="old('marital_status')">
                             @foreach ($marital_statuses as $marital_status)
                                 <option value="{{$marital_status->id}}">{{$marital_status->name}} </option>
                             @endforeach
@@ -87,7 +87,7 @@
                 <x-label for="country" :value="__('Country')" />
 
                
-                <select class="form-select rounded-md  mt-1 shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full ">
+                <select class="form-select rounded-md  mt-1 shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full " name="country_id" id="country_id" :value="old('country')">
                     @foreach ($countries as $country)
                         <option value="{{$country->id}}">{{$country->name}} - {{$country->code}}</option>
                     @endforeach
@@ -112,7 +112,7 @@
                 <x-label for="group" :value="__('Already a Group member?')" />
 
                
-                <select class="form-select rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full ">
+                <select class="form-select rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full" name="group_id" id="group_id" :value="old('group')">
                     @foreach ($groups as $group)
                         <option value="{{$group->id}}">{{$group->name}} </option>
                     @endforeach
@@ -124,7 +124,7 @@
                 <x-label for="hduhau" :value="__('How do you hear about us?')" />
 
                
-                <select class="form-select rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full ">
+                <select class="form-select rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 w-full" name="hduhau_id" id="hduhau_id" :value="old('hduhau')">
                     @foreach ($hduhaus as $hduhau)
                         <option value="{{$hduhau->id}}">{{$hduhau->name}} </option>
                     @endforeach
@@ -183,7 +183,7 @@
             </div>
             </div>
             </div>
-            <p class=" my-4 ">By clicking "Register" below, you acknowledge that you have read and understood, and agree to Our Term & Conditions and Privacy Policy.</p>
+            <p class="my-4">By clicking "Register" below, you acknowledge that you have read and understood, and agree to Our Term & Conditions and Privacy Policy.</p>
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">

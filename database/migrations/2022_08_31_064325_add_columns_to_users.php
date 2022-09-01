@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('last_name')->nullable();
             $table->string('phone')->nullable()->unique();
             $table->date('DOB')->nullable();
-            $table->string('occuptation')->nullable();
+            $table->string('occupation')->nullable();
             $table->string('address')->nullable();
             $table->string('state')->nullable();
             $table->string('church')->nullable();
