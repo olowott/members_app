@@ -10,8 +10,7 @@ class CountryController extends Controller
     //show all countries
     public function index()
     {
-        return view('countries', [
-            'countries' => Country::all()
-        ]);
+        $countries = Country::all();
+        return view('country', compact('countries'));
     }
 }

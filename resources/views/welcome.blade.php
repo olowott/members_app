@@ -3,7 +3,8 @@
 <div class="flex justify-center h-screen">
     @include('partials._side')
     <!-- form section start  -->
-    <div class="flex items-center w-full max-w-md px-6 mx-auto lg:w-2/6">
+    {{-- <div class="flex items-center w-full max-w-md px-6 mx-auto lg:w-2/6"> --}}
+    <div class="flex items-center w-full px-6 mx-auto max-w-3xl lg:w-1/2 ">
       <div class="flex-1">
         <img
           src="{{asset('images/rebirthrwclogo.png') }}"
@@ -17,6 +18,7 @@
 
         <div class="mt-8">
           <form>
+            <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
             <div>
               <label for="email" class="label">Email Address</label>
               <input
@@ -45,6 +47,7 @@
 
             <div class="mt-6">
               <button class="button-full">Sign in</button>
+            </div>
             </div>
           </form>
 

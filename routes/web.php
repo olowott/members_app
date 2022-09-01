@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\CountryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/', [CountryController::class, 'index']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-//Show register/create user form
-Route::get('/register', [UserController::class, 'create']);
-
-//Create a new user
-Route::post('/users', [UserController::class, 'store']);
+require __DIR__.'/auth.php';

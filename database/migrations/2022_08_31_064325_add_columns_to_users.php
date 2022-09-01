@@ -21,10 +21,14 @@ return new class extends Migration
             $table->foreignId('hduhau_id')->nullable();
             //other fields
             $table->string('last_name')->nullable();
-            $table->string('address')->nullable();
             $table->string('phone')->nullable()->unique();
             $table->date('DOB')->nullable();
-            $table->date('membership_year')->nullable();
+            $table->string('occuptation')->nullable();
+            $table->string('address')->nullable();
+            $table->string('state')->nullable();
+            $table->string('church')->nullable();
+            $table->string('pastor_name')->nullable();
+            $table->string('membership_year')->nullable();
             $table->enum('status', ['Active', 'Inactive', 'Blocked'])->default('Inactive');
         });
     }
