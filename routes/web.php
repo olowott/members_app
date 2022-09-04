@@ -17,8 +17,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/thankyou', function () {
+    return view('thankyou');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+Route::get('/profile', function () {
+    return view('profile');
+})->middleware(['auth'])->name('profile');
+
+Route::get('/security', function () {
+    return view('security');
+})->middleware(['auth'])->name('security');
+
+require __DIR__ . '/auth.php';

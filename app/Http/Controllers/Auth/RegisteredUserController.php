@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Contracts\Session\Session;
 
 class RegisteredUserController extends Controller
 {
@@ -52,6 +53,7 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        //create a new user
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -71,10 +73,13 @@ class RegisteredUserController extends Controller
             'membership_year' => $request->membership_year,
         ]);
 
+        //session for user
         event(new Registered($user));
 
         Auth::login($user);
+        //redirect user
 
-        return redirect(RouteServiceProvider::HOME);
+        // Session::flash('message', 'you have logged in');
+        return redirect(RouteServiceProvider::HOME)->with('message', 'you have logged in successfully');
     }
 }
