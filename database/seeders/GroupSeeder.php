@@ -18,7 +18,7 @@ class GroupSeeder extends Seeder
         Group::truncate();
 
         $groups = [
-
+            ['name' => 'None'],
             ['name' => 'Hospitality Ministry'],
             ['name' => 'Prayer Ministry'],
             ['name' => 'Children Ministry'],
