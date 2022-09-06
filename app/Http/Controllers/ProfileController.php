@@ -91,7 +91,7 @@ class ProfileController extends Controller
         $userprofile = Auth::user()->id;
 
         //create a new user
-        $updateProfile = User::where('id', $userprofile)->update([
+        User::where('id', $userprofile)->update([
             'email' => $request->input('email'),
             'name' => $request->input('name'),
             'last_name' => $request->input('last_name'),

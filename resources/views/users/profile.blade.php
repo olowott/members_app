@@ -16,6 +16,12 @@
     </div> --}}
 
     <div class="max-w-4xl mt-8  mx-auto sm:px-6 lg:px-8 bg-white p-6 rounded-xl shadow-lg">
+
+        <!-- Validation Errors -->
+        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        <x-auth-success-message />
+
+
         <p class="block text-2xl font-medium text-gray-600 w-3/4">Your Information</p>
 
         <div class="subheadings mt-4 py-4 ">
