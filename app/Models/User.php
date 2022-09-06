@@ -3,10 +3,14 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Group;
+use App\Models\Hduhau;
+use App\Models\Country;
+use App\Models\Marital_status;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
@@ -36,6 +40,23 @@ class User extends Authenticatable
         'membership_year',
 
     ];
+
+    public function Countries()
+    {
+        return $this->belongsTo(Country::class);
+    }
+    public function Groups()
+    {
+        return $this->belongsTo(Group::class);
+    }
+    public function Hduhaus()
+    {
+        return $this->belongsTo(Hduhau::class);
+    }
+    public function Marital_statues()
+    {
+        return $this->belongsTo(Marital_status::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

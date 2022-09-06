@@ -16,35 +16,29 @@
     </div> --}}
    
     <div class="max-w-2xl mt-8 mx-auto sm:px-6 lg:px-8 bg-white p-6 rounded-xl shadow-lg" >
-            <p class="block text-xl text-gray-600 w-3/4 leading-8">Update your access information.</p>
+            <p class="block text-xl text-gray-600 w-3/4 leading-8">Update your password.</p>
       
         
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        <x-auth-success-message class="mb-4"  />
 
-        <form method="POST" action="{{ route('register') }}">
+        
+
+        <form method="POST" action="{{ route('profile.security') }}">
             @csrf
-
+            @method('PUT')
            
             <div class="subheadings mt-6 py-4 border-t-2 border-gray-100">
-             
-              
-
-                    <!-- Email Address -->
-                    <div class="mt-4">
-                        <x-label for="email" :value="__('Email')" />
-
-                        <x-input id="email" class="block mt-1 w-full" type="email" name="email" required value="{{ Auth::user()->email }}" />
-                    </div>
 
                     <!-- Password -->
                     <div class="mt-4">
-                        <x-label for="password" :value="__('Password')" />
+                        <x-label for="password" :value="__('password')" />
 
                         <x-input id="password" class="block mt-1 w-full"
                                         type="password"
                                         name="password"
-                                        required autocomplete="new-password" />
+                                         autocomplete="new-password" />
                     </div>
 
                     <!-- Confirm Password -->
@@ -53,7 +47,7 @@
 
                         <x-input id="password_confirmation" class="block mt-1 w-full"
                                         type="password"
-                                        name="password_confirmation" required />
+                                        name="password_confirmation"  />
                     </div>
             
            

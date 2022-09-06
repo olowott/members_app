@@ -1,8 +1,8 @@
 @props(['errors'])
 
 @if ($errors->any())
-    <div {{ $attributes }}>
-        <div class="font-medium text-red-600">
+<div class="bg-red-100 mb-4 rounded-md p-4">
+    <div class="font-bold text-lg text-red-600">
             {{ __('Whoops! Something went wrong.') }}
         </div>
 

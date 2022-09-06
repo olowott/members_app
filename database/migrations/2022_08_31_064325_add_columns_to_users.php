@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreignId('hduhau_id')->nullable();
             //other fields
             $table->string('last_name')->nullable();
-            $table->string('phone')->nullable()->unique();
+            $table->string('phone')->nullable();
             $table->date('DOB')->nullable();
             $table->string('occupation')->nullable();
             $table->string('address')->nullable();

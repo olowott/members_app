@@ -67,13 +67,14 @@
           
             <div class="subheadings mt-6 py-4 border-t-2 border-gray-100">
                 <h3 class="text-xl font-semibold text-fuchsia-500">Location Information</h3>
-                <div class="grid grid-cols-1 gap-6 mt-2 sm:grid-cols-3">
+               
             <!-- Address -->
             <div class="mt-4">
                 <x-label for="address" :value="__('Address')" />
 
                 <x-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required autofocus />
             </div>
+            <div class="grid grid-cols-1 gap-6 mt-2 sm:grid-cols-2">
 
             <!-- State -->
             <div class="mt-4">

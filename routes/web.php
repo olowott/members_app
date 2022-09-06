@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use GuzzleHttp\Middleware;
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,16 +24,28 @@ Route::get('/thankyou', function () {
     return view('thankyou');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/users/dashboard', function () {
+        return view('users.dashboard');
+    })->name('dashboard');
 
-Route::get('/profile', function () {
-    return view('profile');
-})->middleware(['auth'])->name('profile');
+    // Profile routes  
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 
-Route::get('/security', function () {
-    return view('security');
-})->middleware(['auth'])->name('security');
+
+    // password update routes
+    Route::get('/security', function () {
+        return view('users.security');
+    })->name('security');
+
+    Route::put('/security', [ProfileController::class, 'security'])->name('profile.security');
+
+    //Delete my profile
+    Route::delete('/profile/delete', [ProfileController::class, 'delete'])->name('profile.destroy');
+});
+
+
 
 require __DIR__ . '/auth.php';

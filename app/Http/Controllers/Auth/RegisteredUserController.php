@@ -32,7 +32,7 @@ class RegisteredUserController extends Controller
         $hduhaus = Hduhau::all();
         $groups = Group::all();
 
-        //companct used to add content to this controller view
+        //compact used to add content to this controller view
         return view('auth.register', compact('countries', 'groups', 'hduhaus', 'marital_statuses'));
     }
 
