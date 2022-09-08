@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\HduhauResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\HduhauResource\RelationManagers;
+use App\Filament\Resources\HduhauResource\RelationManagers\UsersRelationManager;
 
 class HduhauResource extends Resource
 {
@@ -62,6 +63,8 @@ class HduhauResource extends Resource
     {
         return [
             //
+            UsersRelationManager::class
+
         ];
     }
 

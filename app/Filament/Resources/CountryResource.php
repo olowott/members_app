@@ -20,6 +20,7 @@ use App\Filament\Resources\CountryResource\RelationManagers;
 use App\Filament\Resources\CountryResource\Pages\EditCountry;
 use App\Filament\Resources\CountryResource\Pages\CreateCountry;
 use App\Filament\Resources\CountryResource\Pages\ListCountries;
+use App\Filament\Resources\CountryResource\RelationManagers\UsersRelationManager;
 
 class CountryResource extends Resource
 {
@@ -68,6 +69,7 @@ class CountryResource extends Resource
     {
         return [
             //
+            UsersRelationManager::class
         ];
     }
 

@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\GroupResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\GroupResource\RelationManagers;
+use App\Filament\Resources\GroupResource\RelationManagers\UsersRelationManager;
 
 class GroupResource extends Resource
 {
@@ -61,6 +62,7 @@ class GroupResource extends Resource
     {
         return [
             //
+            UsersRelationManager::class
         ];
     }
 

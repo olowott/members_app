@@ -5,8 +5,8 @@ namespace App\Filament\Resources;
 use Filament\Forms;
 use Filament\Tables;
 use Filament\Resources\Form;
-use App\Models\Marital_status;
 use Filament\Resources\Table;
+use App\Models\Marital_status;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Card;
 use Filament\Tables\Columns\TextColumn;
@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\MaritalStatusResource\Pages;
 use App\Filament\Resources\MaritalStatusResource\RelationManagers;
+use App\Filament\Resources\MaritalStatusResource\RelationManagers\UsersRelationManager;
 
 class MaritalStatusResource extends Resource
 {
@@ -62,6 +63,8 @@ class MaritalStatusResource extends Resource
     {
         return [
             //
+            UsersRelationManager::class
+
         ];
     }
 
