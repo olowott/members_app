@@ -38,22 +38,23 @@ class User extends Authenticatable
         'church',
         'pastor_name',
         'membership_year',
+        'status',
 
     ];
 
-    public function Countries()
+    public function Country()
     {
         return $this->belongsTo(Country::class);
     }
-    public function Groups()
+    public function Group()
     {
         return $this->belongsTo(Group::class);
     }
-    public function Hduhaus()
+    public function Hduhau()
     {
         return $this->belongsTo(Hduhau::class);
     }
-    public function Marital_statues()
+    public function Marital_status()
     {
         return $this->belongsTo(Marital_status::class);
     }
