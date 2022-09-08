@@ -22,6 +22,7 @@ use Filament\Resources\Pages\CreateRecord;
 use App\Filament\Resources\UserResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\UserResource\RelationManagers;
+use App\Filament\Resources\UserResource\Widgets\UserStatsOverview;
 
 class UserResource extends Resource
 {
@@ -106,6 +107,13 @@ class UserResource extends Resource
     {
         return [
             //
+        ];
+    }
+
+    public static function getWidgets(): array
+    {
+        return [
+            UserStatsOverview::class,
         ];
     }
 

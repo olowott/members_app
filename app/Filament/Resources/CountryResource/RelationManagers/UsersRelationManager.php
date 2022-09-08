@@ -2,13 +2,21 @@
 
 namespace App\Filament\Resources\CountryResource\RelationManagers;
 
+use livewire;
 use Filament\Forms;
-use Filament\Resources\Form;
-use Filament\Resources\RelationManagers\RelationManager;
-use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Pages\Page;
+use Filament\Resources\Form;
+use Filament\Resources\Table;
+use Illuminate\Support\Facades\Hash;
+use Filament\Forms\Components\Select;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\DatePicker;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Resources\RelationManagers\RelationManager;
 
 class UsersRelationManager extends RelationManager
 {
@@ -20,15 +28,32 @@ class UsersRelationManager extends RelationManager
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
+                Select::make('status')
+                    ->options([
+                        'Active' => 'Active',
+                        'Inactive' => 'Inactive',
+                        'Blocked' => 'Blocked',
+                    ]),
+                TextInput::make('name')->required(),
+                TextInput::make('last_name')->required(),
+                TextInput::make('email')->required(),
+                TextInput::make('password')
+                    ->password()
                     ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('last_name')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('state')
-                    ->required()
-                    ->maxLength(255),
+                    ->minLength(8)
+                    ->dehydrateStateUsing(fn ($state) => Hash::make($state))
+                    ->dehydrated(fn ($state) => filled($state)),
+                TextInput::make('phone'),
+                DatePicker::make('DOB'),
+                Select::make('marital_status_id',)->relationship('marital_status', 'name'),
+                TextInput::make('occupation'),
+                TextInput::make('address'),
+                TextInput::make('state'),
+                TextInput::make('church'),
+                TextInput::make('pastor_name'),
+                TextInput::make('membership_year'),
+                Select::make('hduhau_id',)->relationship('hduhau', 'name'),
+                Select::make('group_id',)->relationship('group', 'name'),
             ]);
     }
 
