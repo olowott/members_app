@@ -14,7 +14,9 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased relative">
-        <div class="min-h-screen bg-gray-100">
+
+        {{-- OLD SETTINGS  --}}
+        {{-- <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 
             <!-- Page Heading -->
@@ -30,6 +32,22 @@
         
                 {{ $slot }}
             </main>
+        </div> --}}
+
+        <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200 font-roboto">
+            @include('layouts.sidebar')
+            
+            <div class="flex-1 flex flex-col overflow-hidden">
+                @include('layouts.header')
+                {{-- @include('_layouts.header') --}}
+
+                <main class="flex-1 overflow-x-hidden overflow-y-auto bg-white">
+                    <div class="container mx-auto px-6 py-8">
+                        {{ $slot }}
+                    </div>
+                </main>
+            </div>
         </div>
+
     </body>
 </html>

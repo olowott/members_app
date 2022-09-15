@@ -15,7 +15,7 @@
         </div>
     </div> --}}
    
-    <div class="max-w-2xl mt-8 mx-auto sm:px-6 lg:px-8 bg-white p-6 rounded-xl shadow-lg" >
+    <x-card class="max-w-2xl " >
             <p class="block text-xl text-gray-600 w-3/4 leading-8">Update your password.</p>
       
         
@@ -63,5 +63,17 @@
             </div>
             
         </form>
-    </div>  
+    </x-card>  
+    <x-card class="max-w-2xl ">
+        <form method="POST" action="{{ route('profile.destroy') }}">
+            <p class="block text-xl text-gray-600 w-3/4 leading-8 ">Delete your account with Rebirth.</p>
+            @csrf
+            @method('DELETE')
+            <x-button class="bg-gray-700 hover:bg-gray-900 mt-4">
+
+                {{ __('Delete profile') }}
+            </x-button>
+        </form>
+
+    </x-card>
 </x-app-layout>

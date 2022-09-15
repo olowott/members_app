@@ -15,7 +15,7 @@
         </div>
     </div> --}}
 
-    <div class="max-w-4xl mt-8  mx-auto sm:px-6 lg:px-8 bg-white p-6 rounded-xl shadow-lg">
+    <x-card class="max-w-4xl ">
         <p class="block text-xl text-gray-600 w-3/4 leading-8">Update your Information</p>
 
 
@@ -199,5 +199,5 @@
             </div>
         </form>
 
-    </div>
+    </x-card>
 </x-app-layout>

@@ -15,7 +15,7 @@
         </div>
     </div> --}}
 
-    <div class="max-w-4xl mt-8  mx-auto sm:px-6 lg:px-8 bg-white p-6 rounded-xl shadow-lg">
+    <x-card class="max-w-4xl ">
 
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
@@ -104,17 +104,9 @@
                 <a href="/profile/edit">Edit profile</a>
             </x-button>
 
-            <form method="POST" action="{{ route('profile.destroy') }}">
-                @csrf
-                @method('DELETE')
-                <x-button class="bg-gray-700 hover:bg-gray-900">
-
-                    {{ __('Delete profile') }}
-                </x-button>
-            </form>
-
+          
         </div>
-    </div>
+    </x-card>
 
 
     </div>

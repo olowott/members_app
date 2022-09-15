@@ -22,14 +22,14 @@
         </div>
     </div> --}}
    
-     <div class="max-w-7xl mt-8 mx-auto sm:px-6 lg:px-8 bg-white p-6 rounded-xl shadow-lg" >
+     <x-card class="  max-w-7xl " >
             <p 
-            class="block text-lg text-gray-600 w-3/4 mx-auto text-center leading-8">Thank you for registrating with Rebirth Ministry,  Do again read our <a class="text-fuchsia-500" target="_blank" href="https://rebirthrwc.org/join-rebirth/rebirthrwc-guidelines/">Membership guidelines</a></p>
+            class="block text-lg text-gray-600 w-3/4 mx-auto text-center leading-8">Thank you for registrating with Rebirth Ministry,  Do read our <a class="text-fuchsia-500" target="_blank" href="https://rebirthrwc.org/join-rebirth/rebirthrwc-guidelines/">Membership guidelines</a></p>
 
             <p 
             class="block text-lg text-gray-600 w-3/4 mx-auto text-center leading-8">For now you can update your information.</p>
       
         
       
-    </div>  
+    </x-card>  
 </x-app-layout>
