@@ -41,9 +41,21 @@ p{
     <title>Rebirth Members App</title>
   </head>
   <body>
-    <main class="bg-white">
+    <main class="bg-white relative text-blueGray-700 antialiased">
+     
         <x-notification />
 {{ $slot }}
     </main>
 </body>
+ <!-- SCRIPTS  -->
+ <script>
+   /* Make dynamic date appear */
+   (function () {
+     if (document.getElementById('get-current-year')) {
+       document.getElementById('get-current-year').innerHTML =
+         new Date().getFullYear();
+     }
+   })();
+
+ </script>
 </html>

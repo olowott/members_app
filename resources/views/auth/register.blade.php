@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <x-auth-card>
+    <x-auth-register-card>
         <x-slot name="logo">
             <a href="/">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
@@ -7,6 +7,8 @@
             <p 
             class="block text-lg leading-5 text-gray-600 w-3/4 mx-auto text-center">Kindly read and acquaint yourself with the  <a class="text-fuchsia-500" target="_blank" href="https://rebirthrwc.org/join-rebirth/rebirthrwc-guidelines/">Membership guidelines</a> before you fill the form </p>
         </x-slot>
+         <!-- Session Status -->
+         <x-auth-session-status class="mb-4" :status="session('status')" />
         
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
@@ -197,5 +199,5 @@
             </div>
             
         </form>
-    </x-auth-card>
+    </x-auth-register-card>
 </x-guest-layout>
